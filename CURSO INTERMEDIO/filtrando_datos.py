@@ -1,7 +1,7 @@
 DATA = [
     {
-        'name': 'Andres',
-        'age': 27,
+        'name': 'Facundo',
+        'age': 72,
         'organization': 'Platzi',
         'position': 'Technical Coach',
         'language': 'python',
@@ -77,12 +77,9 @@ def run():
     all_python_devs = [worker["name"] for worker in DATA if worker["language"] == "python"]
     all_Platzi_workers = [worker["name"] for worker in DATA if worker["organization"] == "Platzi"]
     adults =  [worker["name"] for worker in DATA if worker["age"] > 18]
-    # PARA VERSIONES <PY39
     old_people = list(map(lambda worker: worker | {"old": worker["age"] > 70}, DATA))
-    # # PARA VERSIONES >PY39
-    # old_people = list(map(lambda worker: {**worker, **{"old": worker["age"] > 70}}, DATA))
 
-    for worker in old_people:
+    for worker in all_python_devs:
         print(worker)
 
 
